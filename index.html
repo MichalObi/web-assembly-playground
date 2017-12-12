@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>WebAssembly Example</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+
+    <!-- Include the JavaScript glue code. -->
+    <!-- This will load the WebAssembly module and run its main. -->
+    <script src="index.js"></script>
+
+    <script>
+
+    (function(){
+      this.rollDice = function() {
+        return 'My result is ' + _roll_dice();
+      }
+      console.log(this.rollDice());
+    }(this));
+
+    </script>
+  </body>
+</html>

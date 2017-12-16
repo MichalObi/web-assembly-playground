@@ -9,7 +9,7 @@
 
     <!-- Include the JavaScript glue code. -->
     <!-- This will load the WebAssembly module and run its main. -->
-    <script src="index.js"></script>
+    <script src="webAssembly-playground.js"></script>
 
     <script>
 
@@ -17,7 +17,13 @@
       this.rollDice = function() {
         return 'My result is ' + _roll_dice();
       }
+
+      this.classicFibonacci = function(n) {
+        return `Fibonacci for ${n} is ` + _classic_fibonacci(n);
+      }
+
       console.log(this.rollDice());
+      console.log(this.classicFibonacci(5));
     }(this));
 
     </script>

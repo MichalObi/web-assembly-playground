@@ -19,11 +19,16 @@
       }
 
       this.classicFibonacci = function(n) {
-        return `Fibonacci for ${n} is ` + _classic_fibonacci(n);
+        return `Fibonacci (classic) for ${n} is ` + _classic_fibonacci(n);
+      }
+
+      this.recurrenceFibonacci = function(n) {
+        return `Fibonacci (recurrence) for ${n} is ` + _fibonacci_recurrence(n);
       }
 
       console.log(this.rollDice());
       console.log(this.classicFibonacci(5));
+      console.log(this.recurrenceFibonacci(5));
     }(this));
 
     </script>

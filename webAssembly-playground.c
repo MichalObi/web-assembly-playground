@@ -31,3 +31,9 @@ int EMSCRIPTEN_KEEPALIVE classic_fibonacci(int n){
 
   return b;
 }
+
+int EMSCRIPTEN_KEEPALIVE fibonacci_recurrence(int num) {
+  if (num <= 1) return 1;
+
+  return fibonacci_recurrence(num - 1) + fibonacci_recurrence(num - 2);
+}

@@ -32,8 +32,21 @@ int EMSCRIPTEN_KEEPALIVE classic_fibonacci(int n){
   return b;
 }
 
+// for arg 5 go like 4 + 3 in first and 2 + 1 in second iteration - 2 iteration
 int EMSCRIPTEN_KEEPALIVE fibonacci_recurrence(int num) {
   if (num <= 1) return 1;
 
   return fibonacci_recurrence(num - 1) + fibonacci_recurrence(num - 2);
+}
+
+int memo[10000];
+
+int EMSCRIPTEN_KEEPALIVE fibonacci_memo(int n) {
+  if (memo[n] != -1) return memo[n];
+
+  if (n == 1 || n == 2) {
+    return 1;
+  } else {
+    return memo[n] = fibonacci_memo(n - 1) + fibonacci_memo(n - 2);
+  }
 }

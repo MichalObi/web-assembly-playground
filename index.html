@@ -26,9 +26,14 @@
         return `Fibonacci (recurrence) for ${n} is ` + _fibonacci_recurrence(n);
       }
 
+      this.recurrenceWithMemoFibonacci = function(n) {
+        return `Fibonacci (recurrence + memo) for ${n} is ` + _fibonacci_recurrence(n);
+      }
+
       console.log(this.rollDice());
       console.log(this.classicFibonacci(5));
       console.log(this.recurrenceFibonacci(5));
+        console.log(this.recurrenceWithMemoFibonacci(5));
     }(this));
 
     </script>

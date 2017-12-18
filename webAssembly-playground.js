@@ -1334,10 +1334,11 @@ var memoryInitializer = null;
 
 STATIC_BASE = 8;
 
-STATICTOP = STATIC_BASE + 48;
+STATICTOP = STATIC_BASE + 40048;
 
 
 /* global initializers */ __ATINIT__.push({ func: function() { runPostSets() } });
+
 
 
 
@@ -4846,13 +4847,13 @@ function asmPrintFloat(x, y) {
 // EMSCRIPTEN_START_ASM
 var asm=(function(global,env,buffer){"use asm";var a=new global.Int8Array(buffer);var b=new global.Int16Array(buffer);var c=new global.Int32Array(buffer);var d=new global.Uint8Array(buffer);var e=new global.Uint16Array(buffer);var f=new global.Uint32Array(buffer);var g=new global.Float32Array(buffer);var h=new global.Float64Array(buffer);var i=env.STACKTOP|0;var j=env.STACK_MAX|0;var k=env.tempDoublePtr|0;var l=env.ABORT|0;var m=+env.NaN;var n=+env.Infinity;var o=0;var p=0;var q=0;var r=0;var s=0,t=0,u=0,v=0,w=0.0,x=0,y=0,z=0,A=0.0;var B=0;var C=0;var D=0;var E=0;var F=0;var G=0;var H=0;var I=0;var J=0;var K=0;var L=global.Math.floor;var M=global.Math.abs;var N=global.Math.sqrt;var O=global.Math.pow;var P=global.Math.cos;var Q=global.Math.sin;var R=global.Math.tan;var S=global.Math.acos;var T=global.Math.asin;var U=global.Math.atan;var V=global.Math.atan2;var W=global.Math.exp;var X=global.Math.log;var Y=global.Math.ceil;var Z=global.Math.imul;var _=env.abort;var $=env.assert;var aa=env.asmPrintInt;var ba=env.asmPrintFloat;var ca=env.min;var da=env.invoke_ii;var ea=env.invoke_v;var fa=env.invoke_iii;var ga=env.invoke_vi;var ha=env._rand;var ia=env._malloc;var ja=env._pwrite;var ka=env._puts;var la=env._fputc;var ma=env.___setErrNo;var na=env._srand;var oa=env._send;var pa=env._write;var qa=env._fputs;var ra=env._free;var sa=env._time;var ta=env._fflush;var ua=0.0;
 // EMSCRIPTEN_START_FUNCS
-function za(a){a=a|0;var b=0;b=i;i=i+a|0;i=i+7&-8;return b|0}function Aa(){return i|0}function Ba(a){a=a|0;i=a}function Ca(a,b){a=a|0;b=b|0;if((o|0)==0){o=a;p=b}}function Da(b){b=b|0;a[k]=a[b];a[k+1|0]=a[b+1|0];a[k+2|0]=a[b+2|0];a[k+3|0]=a[b+3|0]}function Ea(b){b=b|0;a[k]=a[b];a[k+1|0]=a[b+1|0];a[k+2|0]=a[b+2|0];a[k+3|0]=a[b+3|0];a[k+4|0]=a[b+4|0];a[k+5|0]=a[b+5|0];a[k+6|0]=a[b+6|0];a[k+7|0]=a[b+7|0]}function Fa(a){a=a|0;B=a}function Ga(a){a=a|0;C=a}function Ha(a){a=a|0;D=a}function Ia(a){a=a|0;E=a}function Ja(a){a=a|0;F=a}function Ka(a){a=a|0;G=a}function La(a){a=a|0;H=a}function Ma(a){a=a|0;I=a}function Na(a){a=a|0;J=a}function Oa(a){a=a|0;K=a}function Pa(){}function Qa(a,b){a=a|0;b=b|0;ka(8)|0;return 0}function Ra(){na(sa(0)|0);return((ha()|0)%6|0)+1|0}function Sa(a){a=a|0;var b=0,c=0,d=0;if((a|0)>1){c=1;b=1;while(1){a=a-1|0;d=b+c|0;if((a|0)>1){c=b;b=d}else{break}}}else{d=1}return d|0}function Ta(a){a=a|0;var b=0,c=0;if((a|0)<2){a=1;return a|0}else{b=1}while(1){c=a-2|0;b=(Ta(a-1|0)|0)+b|0;if((c|0)<2){break}else{a=c}}return b|0}function Ua(b){b=b|0;var c=0;c=b;while(a[c]|0){c=c+1|0}return c-b|0}function Va(b,d,e){b=b|0;d=d|0;e=e|0;var f=0;f=b|0;if((b&3)==(d&3)){while(b&3){if((e|0)==0)return f|0;a[b]=a[d]|0;b=b+1|0;d=d+1|0;e=e-1|0}while((e|0)>=4){c[b>>2]=c[d>>2];b=b+4|0;d=d+4|0;e=e-4|0}}while((e|0)>0){a[b]=a[d]|0;b=b+1|0;d=d+1|0;e=e-1|0}return f|0}function Wa(b,d,e){b=b|0;d=d|0;e=e|0;var f=0,g=0,h=0,i=0;f=b+e|0;if((e|0)>=20){d=d&255;i=b&3;h=d|d<<8|d<<16|d<<24;g=f&~3;if(i){i=b+4-i|0;while((b|0)<(i|0)){a[b]=d;b=b+1|0}}while((b|0)<(g|0)){c[b>>2]=h;b=b+4|0}}while((b|0)<(f|0)){a[b]=d;b=b+1|0}return b-e|0}function Xa(a,b){a=a|0;b=b|0;return va[a&1](b|0)|0}function Ya(a){a=a|0;wa[a&1]()}function Za(a,b,c){a=a|0;b=b|0;c=c|0;return xa[a&1](b|0,c|0)|0}function _a(a,b){a=a|0;b=b|0;ya[a&1](b|0)}function $a(a){a=a|0;_(0);return 0}function ab(){_(1)}function bb(a,b){a=a|0;b=b|0;_(2);return 0}function cb(a){a=a|0;_(3)}
+function za(a){a=a|0;var b=0;b=i;i=i+a|0;i=i+7&-8;return b|0}function Aa(){return i|0}function Ba(a){a=a|0;i=a}function Ca(a,b){a=a|0;b=b|0;if((o|0)==0){o=a;p=b}}function Da(b){b=b|0;a[k]=a[b];a[k+1|0]=a[b+1|0];a[k+2|0]=a[b+2|0];a[k+3|0]=a[b+3|0]}function Ea(b){b=b|0;a[k]=a[b];a[k+1|0]=a[b+1|0];a[k+2|0]=a[b+2|0];a[k+3|0]=a[b+3|0];a[k+4|0]=a[b+4|0];a[k+5|0]=a[b+5|0];a[k+6|0]=a[b+6|0];a[k+7|0]=a[b+7|0]}function Fa(a){a=a|0;B=a}function Ga(a){a=a|0;C=a}function Ha(a){a=a|0;D=a}function Ia(a){a=a|0;E=a}function Ja(a){a=a|0;F=a}function Ka(a){a=a|0;G=a}function La(a){a=a|0;H=a}function Ma(a){a=a|0;I=a}function Na(a){a=a|0;J=a}function Oa(a){a=a|0;K=a}function Pa(){}function Qa(a,b){a=a|0;b=b|0;ka(8)|0;return 0}function Ra(){na(sa(0)|0);return((ha()|0)%6|0)+1|0}function Sa(a){a=a|0;var b=0,c=0,d=0;if((a|0)>1){c=1;b=1;while(1){a=a-1|0;d=b+c|0;if((a|0)>1){c=b;b=d}else{break}}}else{d=1}return d|0}function Ta(a){a=a|0;var b=0,c=0;if((a|0)<2){a=1;return a|0}else{b=1}while(1){c=a-2|0;b=(Ta(a-1|0)|0)+b|0;if((c|0)<2){break}else{a=c}}return b|0}function Ua(a){a=a|0;var b=0,d=0;b=40+(a<<2)|0;d=c[b>>2]|0;if((d|0)!=-1){return d|0}d=a-1|0;if(d>>>0<2>>>0){d=1;return d|0}else{d=Ua(d)|0;d=(Ua(a-2|0)|0)+d|0;c[b>>2]=d;return d|0}return 0}function Va(b){b=b|0;var c=0;c=b;while(a[c]|0){c=c+1|0}return c-b|0}function Wa(b,d,e){b=b|0;d=d|0;e=e|0;var f=0;f=b|0;if((b&3)==(d&3)){while(b&3){if((e|0)==0)return f|0;a[b]=a[d]|0;b=b+1|0;d=d+1|0;e=e-1|0}while((e|0)>=4){c[b>>2]=c[d>>2];b=b+4|0;d=d+4|0;e=e-4|0}}while((e|0)>0){a[b]=a[d]|0;b=b+1|0;d=d+1|0;e=e-1|0}return f|0}function Xa(b,d,e){b=b|0;d=d|0;e=e|0;var f=0,g=0,h=0,i=0;f=b+e|0;if((e|0)>=20){d=d&255;i=b&3;h=d|d<<8|d<<16|d<<24;g=f&~3;if(i){i=b+4-i|0;while((b|0)<(i|0)){a[b]=d;b=b+1|0}}while((b|0)<(g|0)){c[b>>2]=h;b=b+4|0}}while((b|0)<(f|0)){a[b]=d;b=b+1|0}return b-e|0}function Ya(a,b){a=a|0;b=b|0;return va[a&1](b|0)|0}function Za(a){a=a|0;wa[a&1]()}function _a(a,b,c){a=a|0;b=b|0;c=c|0;return xa[a&1](b|0,c|0)|0}function $a(a,b){a=a|0;b=b|0;ya[a&1](b|0)}function ab(a){a=a|0;_(0);return 0}function bb(){_(1)}function cb(a,b){a=a|0;b=b|0;_(2);return 0}function db(a){a=a|0;_(3)}
 
 
 
 
 // EMSCRIPTEN_END_FUNCS
-var va=[$a,$a];var wa=[ab,ab];var xa=[bb,bb];var ya=[cb,cb];return{_classic_fibonacci:Sa,_main:Qa,_strlen:Ua,_memset:Wa,_roll_dice:Ra,_memcpy:Va,_fibonacci_recurrence:Ta,runPostSets:Pa,stackAlloc:za,stackSave:Aa,stackRestore:Ba,setThrew:Ca,setTempRet0:Fa,setTempRet1:Ga,setTempRet2:Ha,setTempRet3:Ia,setTempRet4:Ja,setTempRet5:Ka,setTempRet6:La,setTempRet7:Ma,setTempRet8:Na,setTempRet9:Oa,dynCall_ii:Xa,dynCall_v:Ya,dynCall_iii:Za,dynCall_vi:_a}})
+var va=[ab,ab];var wa=[bb,bb];var xa=[cb,cb];var ya=[db,db];return{_classic_fibonacci:Sa,_main:Qa,_strlen:Va,_memset:Xa,_roll_dice:Ra,_memcpy:Wa,_fibonacci_recurrence:Ta,_fibonacci_memo:Ua,runPostSets:Pa,stackAlloc:za,stackSave:Aa,stackRestore:Ba,setThrew:Ca,setTempRet0:Fa,setTempRet1:Ga,setTempRet2:Ha,setTempRet3:Ia,setTempRet4:Ja,setTempRet5:Ka,setTempRet6:La,setTempRet7:Ma,setTempRet8:Na,setTempRet9:Oa,dynCall_ii:Ya,dynCall_v:Za,dynCall_iii:_a,dynCall_vi:$a}})
 
 
 // EMSCRIPTEN_END_ASM
@@ -4864,6 +4865,7 @@ var _memset = Module["_memset"] = asm["_memset"];
 var _roll_dice = Module["_roll_dice"] = asm["_roll_dice"];
 var _memcpy = Module["_memcpy"] = asm["_memcpy"];
 var _fibonacci_recurrence = Module["_fibonacci_recurrence"] = asm["_fibonacci_recurrence"];
+var _fibonacci_memo = Module["_fibonacci_memo"] = asm["_fibonacci_memo"];
 var runPostSets = Module["runPostSets"] = asm["runPostSets"];
 var dynCall_ii = Module["dynCall_ii"] = asm["dynCall_ii"];
 var dynCall_v = Module["dynCall_v"] = asm["dynCall_v"];

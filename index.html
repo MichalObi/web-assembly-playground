@@ -15,25 +15,61 @@
 
     (function(){
       this.rollDice = function() {
-        return 'My result is ' + _roll_dice();
+        return 'My C roll results is ' + _roll_dice();
       }
 
       this.classicFibonacci = function(n) {
-        return `Fibonacci (classic) for ${n} is ` + _classic_fibonacci(n);
+        return `Fibonacci C (classic) for ${n} is ` + _classic_fibonacci(n);
       }
 
       this.recurrenceFibonacci = function(n) {
-        return `Fibonacci (recurrence) for ${n} is ` + _fibonacci_recurrence(n);
+        return `Fibonacci C (recurrence) for ${n} is ` + _fibonacci_recurrence(n);
       }
 
       this.recurrenceWithMemoFibonacci = function(n) {
-        return `Fibonacci (recurrence + memo) for ${n} is ` + _fibonacci_recurrence(n);
+        return `Fibonacci C (recurrence + memo) for ${n} is ` + _fibonacci_recurrence(n);
+      }
+
+      this.classicFibonacciJs = function(num) {
+        var a = 1, b = 0, temp;
+
+        while (num >= 0){
+          temp = a;
+          a = a + b;
+          b = temp;
+          num--;
+        }
+
+        return b;
+      }
+
+      this.recurrenceFibonacciJs = function(num) {
+        if (num <= 1) return 1;
+        return recurrenceFibonacciJs(num - 1) + recurrenceFibonacciJs(num - 2);
+      }
+
+      this.recurrenceWithMemoFibonacciJS = function(num, memo) {
+        memo = memo || {};
+        if (memo[num]) return memo[num];
+        if (num <= 1) return 1;
+        return memo[num] = recurrenceWithMemoFibonacciJS(num - 1, memo)
+        + recurrenceWithMemoFibonacciJS(num - 2, memo);
       }
 
       console.log(this.rollDice());
+
+      console.warn('FIBBO TEST ! ! !');
+      console.info('C implementations');
       console.log(this.classicFibonacci(5));
       console.log(this.recurrenceFibonacci(5));
-        console.log(this.recurrenceWithMemoFibonacci(5));
+      console.log(this.recurrenceWithMemoFibonacci(5));
+
+      var jsFibboParam = 5;
+
+      console.info('JS implementations');
+      console.log(`Fibonacci JS (classic) for ${jsFibboParam} is ` + this.classicFibonacciJs(jsFibboParam));
+      console.log(`Fibonacci JS (recurrence) for ${jsFibboParam} is ` + this.recurrenceFibonacciJs(jsFibboParam));
+      console.log(`Fibonacci JS (recurrence + memo) for ${jsFibboParam} is `  + this.recurrenceWithMemoFibonacciJS(jsFibboParam));
     }(this));
 
     </script>

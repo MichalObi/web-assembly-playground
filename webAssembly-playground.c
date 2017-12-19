@@ -39,6 +39,7 @@ int EMSCRIPTEN_KEEPALIVE fibonacci_recurrence(int num) {
   return fibonacci_recurrence(num - 1) + fibonacci_recurrence(num - 2);
 }
 
+// memo is cache array
 int memo[10000];
 
 int EMSCRIPTEN_KEEPALIVE fibonacci_memo(int n) {
